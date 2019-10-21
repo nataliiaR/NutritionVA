@@ -1,5 +1,5 @@
 const Ingredient = require("../Ingredient");
-const sql = require("../../ORM/ingredientSql");
+const sql = require("../../controller/ingredientSql");
 
 let interface = {
     assembly: {

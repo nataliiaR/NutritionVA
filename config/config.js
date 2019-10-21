@@ -1,4 +1,5 @@
-const dotenv = require('dotenv').config();
+const mode = "production"
+if(mode !== "production") {require('dotenv').config();}
 
 module.exports = {
     spoonacular: {
