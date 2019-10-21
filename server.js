@@ -1,8 +1,7 @@
 
-require('dotenv').config();
 const express = require('express');
-const exphbs = require("express-handlebars");
-const db = require("./models")
+const db = require("./db/models")
+const logger = require("morgan");
 
 let app = express();
 let PORT = process.env.PORT || 3000;
@@ -11,14 +10,18 @@ let PORT = process.env.PORT || 3000;
 // HTTP Communication Nodes
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(logger("dev"));
 
- 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// Enables React
+if (mode === "production") {app.use(express.static("client/build"));}
 
 // Routes
 require("./routes/api-routes.js")(app);
-//require("./routes/html-routes.js")(app);
+
+// All other routes redirected to react
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 // Listener
 db.sequelize.sync({ force: true }).then(() => {

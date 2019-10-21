@@ -1,5 +1,5 @@
 const factory = require("../factories/IngredientFactory");
-const sql = require("../../ORM/ingredientSql");
+const sql = require("../../controller/ingredientSql");
 let interface = {
     create: (id, cb) => {
         factory.Create(id, (ConcreteObject) => {

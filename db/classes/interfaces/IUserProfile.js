@@ -1,5 +1,5 @@
 const factory = require("../factories/UserProfileFactory");
-const sql = require("../../ORM/userSql");
+const sql = require("../../controller/userSql");
 let interface = {
     create: (getBodyObj, cb) => {
         factory.Create(getBodyObj, (ConcreteObject) => {

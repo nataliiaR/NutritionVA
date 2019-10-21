@@ -1,9 +1,9 @@
 const UserProfile = require("../UserProfile");
-const UserSql = require("../../ORM/userSql");
-const UserMetricsSql = require("../../ORM/userMetricsSql");
-const UserCredentialsSql = require("../../ORM/userCredentialsSql");
-const DietConfigSql = require("../../ORM/dietConfigSql");
-const UserScheduleSql = require("../../ORM/userScheduleSql");
+const UserSql = require("../../controller/userSql");
+const UserMetricsSql = require("../../controller/userMetricsSql");
+const UserCredentialsSql = require("../../controller/userCredentialsSql");
+const DietConfigSql = require("../../controller/dietConfigSql");
+const UserScheduleSql = require("../../controller/userScheduleSql");
 const UserScheduleFactory = require("./UserScheduleFactory");
 
 let interface = {

@@ -1,4 +1,4 @@
-const Spoonacular = require("../../api/spoonacular");
+const Spoonacular = require("../../../api/spoonacular");
 const Recipe = require("../interfaces/IRecipe");
 const moment = require('moment');
 
