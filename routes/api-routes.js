@@ -1,8 +1,7 @@
-const IUserProfile = require("../classes/interfaces/IUserProfile");
-
-const IRecipe = require("../classes/interfaces/IRecipe");
-const INutrients = require("../classes/Nutrients");
-const IIngredients = require("../classes/Ingredient");
+const IUserProfile = require("../db/classes/interfaces/IUserProfile");
+const IRecipe = require("../db/classes/interfaces/IRecipe");
+const INutrients = require("../db/classes/interfaces/INutrientsNutrients");
+const IIngredients = require("../db/classes/interfaces/IIngredient");
 
 
 // Routes
