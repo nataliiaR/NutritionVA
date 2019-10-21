@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(logger("dev"));
 
 // Enables React
-if (mode === "production") {app.use(express.static("client/build"));}
+if (process.env.NODE_ENV === "production") {app.use(express.static("client/build"));}
 
 // Routes
 require("./routes/api-routes.js")(app);
