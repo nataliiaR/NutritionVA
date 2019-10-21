@@ -1,6 +1,6 @@
 const Nutrients = require("../Nutrients");
-const sql = require("../../ORM/nutrientsSql");
-const Spoonacular = require("../../api/spoonacular");
+const sql = require("../../controller/nutrientsSql");
+const Spoonacular = require("../../../api/spoonacular");
 
 let interface = {
     assembly: {
