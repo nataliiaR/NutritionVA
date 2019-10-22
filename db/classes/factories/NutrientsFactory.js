@@ -18,7 +18,7 @@ let interface = {
         a: null,
         manganese: null,
         selenium: null,
-        c: obj.c,
+        c: null,
         folate: null,
         e: null,
         fiber: null,
