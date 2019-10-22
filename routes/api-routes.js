@@ -1,6 +1,6 @@
 const IUserProfile = require("../db/classes/interfaces/IUserProfile");
 const IRecipe = require("../db/classes/interfaces/IRecipe");
-const INutrients = require("../db/classes/interfaces/INutrientsNutrients");
+const INutrients = require("../db/classes/interfaces/INutrients");
 const IIngredients = require("../db/classes/interfaces/IIngredient");
 
 
