@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button.btn{
+    background-color: #44A7BB;
+    border-color: #44A7BB;
+}
+
+.modal-dialog{
+    box-shadow: 10px 10px 59px 0px rgba(0,0,0,1);
+}
