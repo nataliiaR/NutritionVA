@@ -1,0 +1,91 @@
+body{
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 100%;
+    background-color: white;
+
+}
+
+
+
+.carousel{
+
+  width: 90%;
+  margin: auto;
+  height: 50%;
+  margin-top:2em;
+  position: relative;
+  box-shadow: 10px 10px 59px 0px rgba(0,0,0,1);
+}
+
+.image_cust{
+  width: 100%;
+  margin-bottom: 0.5em
+}
+
+.carousel-control-next
+{
+  width: 3%;
+}
+.carousel-control-prev{
+  width: 3%;
+}
+.carousel-control-next-icon{
+  background-color: #343A40;
+}
+.carousel-control-prev-icon{
+  background-color: #343A40;
+}
+.carousel-indicators {
+  visibility: hidden;
+} 
+.refreshBtn{
+  border: 0.1em;
+  border-color: #343A40;
+  background-color: #44A7BB;
+  color: white;
+
+}
+.reloadDiv p{
+  display: inline;
+}
+.reloadDiv{
+  margin: 1em;
+  text-align: center;
+}
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  text-align: center;
+  margin-bottom: 1em;
+
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+  transform: scale(1.1);
+}
+
+.dayTittle{
+  text-align: center;
+ font-size: 3em
+}
+
+
+.recipeCardBtn{
+ margin: 1em 1em 1em 1em;
+ color: white;
+ 
+}
+
+.rowDashboard{
+  margin-left:1em;
+  margin-right:1em
+}

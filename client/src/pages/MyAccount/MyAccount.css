@@ -1,0 +1,25 @@
+
+.logo{
+  width: 90%;
+  height: 100%;
+}
+.aboutHeader {
+  text-align: center;
+  font-size: 45px;
+  margin-top: 40px;
+  opacity: 0.9;
+  margin-right: 300px;
+}
+
+
+.container {
+  margin-top: 10px;
+}
+
+.inputField{
+  margin: 0.5em
+}
+
+.closeBtn{
+  margin-left: 10em
+}

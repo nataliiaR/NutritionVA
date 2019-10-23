@@ -1,0 +1,10 @@
+.btn-margin {
+    margin: 7px 3px;
+  }
+
+  .btn-margin {
+    margin: 5px;
+    background-color: gray;
+    border-color:gray;
+    color: black;
+  }
