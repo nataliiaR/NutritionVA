@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Dashboard from "./pages/Dashboard";
 import Home from './pages/Home';
-import NotFound from "./pages/NotFound/NotFound.js";
+import NotFound from "./components/NotFound/NotFound.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import Footer from './components/Footer/Footer.js';

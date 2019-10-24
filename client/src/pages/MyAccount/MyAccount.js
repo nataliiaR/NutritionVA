@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../utils/dietConfig';
-import MyDetails from '../../components/MyDetails/MyDetails';
-import MyAccountMenu from '../../components/MyAccountMenu/MyAccountMenu';
+import MyDetails from '../../components/MyDetails/MyDetails.js';
+import MyAccountMenu from '../../components/MyAccountMenu/MyAccountMenu.js';
 
 class MyAccount extends Component {
     constructor(props) {

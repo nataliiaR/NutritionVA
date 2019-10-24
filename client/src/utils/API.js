@@ -2,15 +2,26 @@ import axios from "axios";
 
 export default {
   // Gets schedule
-  getSchedule: function() {
-    return axios.get("/api/UserSchedule");
+  getUser: function(uid) {
+    return axios.get(`/api/UserProfile/${uid}`);
+  },
+  createUser: function(userObj) {
+    return axios.post('/api/UserProfile/', userObj);
+  },
+  updateUser: function(uid, userObj) {
+    return axios.post(`/api/UserProfile/${uid}`, userObj);
+  },
+  deleteUser: function(uid){
+    return axios.delete(`/api/UserProfile/${uid}`);
   },
   // Gets the recipe with the given id
-  getRecipe: function(id) {
-    return axios.get("/api/Recipe/" + id);
+  getRecipe: function(recipeID) {
+    return axios.get(`/api/Recipe/${recipeID}`);
   },
-  // Deletes the recipe with the given id
-  deleteRecipe: function(id) {
-    return axios.delete("/api/Recipe/" + id);
-  }
+  getNutrients: function(recipeID) {
+    return axios.get(`/api/Nutrients/${recipeID}`);
+  },
+  getIngredient: function(IngredientID) {
+    return axios.get(`/api/Ingredient/${IngredientID}`);
+  },
 };
