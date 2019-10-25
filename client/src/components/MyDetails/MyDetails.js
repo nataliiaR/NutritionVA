@@ -1,13 +1,13 @@
 
 import React from 'react';
 
-const DietModal = () =>(
+const MyDetails = () =>(
 
 <div id="myModalDiet">
     <div className="modal-dialog" role="document">
         <div className="modal-content">
             <div className="modal-header">
-                <h5 className="modal-title">Tell Us Your Diet</h5>
+                <h5 className="modal-title">Update your info </h5>
                 
             </div>
             <div className="modal-body">
@@ -59,7 +59,7 @@ const DietModal = () =>(
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-primary" id="btnCancel">Cancel</button>
-                <button type="button" className="btn btn-primary" id="btnNext">Next</button>
+                <button type="button" className="btn btn-primary" id="btnNext">Save</button>
                 
             </div>
         </div>
@@ -68,7 +68,7 @@ const DietModal = () =>(
             
 );
 
-export default DietModal;
+export default MyDetails;
 
 
 

@@ -1,14 +1,6 @@
 import $ from 'jquery'; 
 
 $(document).ready(() => {
-
-  
-
-    $('#needHelpBtn').on('click', function(event){
-     event.preventDefault();
-      $('#calculator').toggle();
-    });
- 
  
    // Next button, collect user diet information
    $("#btnNext").on("click", function(event) {
@@ -71,7 +63,7 @@ $(document).ready(() => {
        function() {
          console.log(DietConfig);
      
-         // location.reload(); /// where I need redirect?
+         // location.reload(); /// where I need to redirect?
 
        }
      );

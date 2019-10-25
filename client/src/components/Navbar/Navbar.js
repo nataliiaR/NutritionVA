@@ -43,7 +43,7 @@ class Navbar
         }
   render() {
     return (
-        <div>
+        <div className="navDiv">
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
