@@ -1,5 +1,6 @@
 const IUserProfile = require("../db/classes/interfaces/IUserProfile");
 const UserCredentialsSql = require("../../controller/userCredentialsSql");
+const UserSessionSql = require("../../controller/userSessionSql");
 
 module.exports = (app) => {
     app.post('/api/account/signup', (req, res) => {
@@ -74,9 +75,48 @@ module.exports = (app) => {
         UserCredentialsSql.FindByEmail(email, (credObj) => {
             if(credObj.email === email)
             {
-                if(credOnj.isValidPW(password))
+                if(credObj.isValidPW(password))
                 {
+                    let session = {
+                        UserID: credObj.UserID,
+                        sessionUpdate: Date.now(),
+                        isActive: true
+                    }
 
+                    UserSessionSql.Read(credObj.UserID, (arr) =>{
+                        if(arr[0].UserID === credObj.UserID)
+                        {
+                            UserSessionSql.Update(session, (obj) => {
+                                if(obj.UserID === credObj.UserID)
+                                {
+                                    return res.JSON(obj);
+                                }
+                                else
+                                {
+                                    return res.send({
+                                        success: false,
+                                        message: 'Error: User Session Could Not Be Updated.'
+                                    });
+                                }
+                            });
+                        }
+                        else
+                        {
+                            UserSessionSql.Create(session, (obj) => {
+                                if(obj.UserID === credObj.UserID)
+                                {
+                                    return res.JSON(obj);
+                                }
+                                else
+                                {
+                                    return res.send({
+                                        success: false,
+                                        message: 'Error: User Session could not be created.'
+                                    });
+                                }
+                            })
+                        }
+                    });
                 }
                 else
                 {
