@@ -33,17 +33,21 @@ class MyAccount extends Component {
   render() {
     return (
       <div className ="account">
-        <Container>
-          <Row>
-            <Col size ="md-4">
+    <Container>
+        <Row>
+            <Col className = "sidebar" size ="md-4">
               <MyAccountMenu toggleForm={this.toggleForm} />
             </Col>
-            <Col size = "md-8">
-            {this.getForm(this.state.currentMode)}
-            </Col>
-          </Row>
-        </Container>
-    </div>
+        <Col size = "md-8">
+          {this.getForm(this.state.currentMode)}
+        </Col>
+        </Row>
+
+
+      
+    </Container>
+    {/* <p><a href="https://www.freepik.com/free-photos-vectors/food">Food vector created by bimbimkha - www.freepik.com</a></p> */}
+</div>
     );
   }
 }

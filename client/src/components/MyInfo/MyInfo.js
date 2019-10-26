@@ -5,10 +5,10 @@ const MyInfo = () =>(
 
 <div id="myModalDiet">
     <div role="document">
+        <h3 className = "headerInfo"> My Info</h3>
         <div className="modal-content">
             <div className="modal-header">
                 <h5 className="modal-title">Update your info </h5>
-                
             </div>
             <div className="modal-body">
                 

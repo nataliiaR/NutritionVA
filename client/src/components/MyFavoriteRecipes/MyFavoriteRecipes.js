@@ -4,7 +4,7 @@ import React from 'react';
 const MyFavoriteRecipes = () =>(
 
 <div>
-    To be created
+    <h3 className = "headerInfo"> My Favorite Recipes </h3>
 </div>
             
 );

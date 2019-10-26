@@ -6,7 +6,7 @@ import "./ContactNutritionVA.css"
 const RecipeCard = (props) =>(
 
     <form className="Contact">
-    
+    <h3 className = "headerInfo"> Contact Nutrition VA</h3> 
     <div class="form-group">
         <label for="exampleInputName">Name</label>
         <input type="text" class="form-control" id="exampleInputName" placeholder="Your name"/>

@@ -2,3 +2,10 @@
     box-shadow: none;
     margin-top: 2em
   }
+
+
+  .headerInfo{
+    margin: 1em;
+    color: #44A7BB;
+    text-align: center;
+  }
