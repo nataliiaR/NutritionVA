@@ -1,10 +1,10 @@
 
 import React from 'react';
 
-const MyDetails = () =>(
+const MyInfo = () =>(
 
 <div id="myModalDiet">
-    <div className="modal-dialog" role="document">
+    <div role="document">
         <div className="modal-content">
             <div className="modal-header">
                 <h5 className="modal-title">Update your info </h5>
@@ -13,16 +13,16 @@ const MyDetails = () =>(
             <div className="modal-body">
                 
                 <form>
-                    <label htmlFor="customRange3">Total Days</label> 
+                    <label htmlFor="customRange3">Change number of total days</label> 
                 
                     <div className="input-group">
                             <input className="form-control" aria-describedby="basic-addon1" aria-label="" type="text" id="inputDays"/>
                     </div>
-                    <label htmlFor="customRange3">Calories</label> 
+                    <label htmlFor="customRange3">Change number of calories</label> 
                     <div className="input-group">
                             <input className="form-control" aria-describedby="basic-addon1" aria-label="" type="text" id="inputCalories"/>
                     </div>
-                    <label htmlFor="customRange3">Diet Preference</label> 
+                    <label htmlFor="customRange3">Change your diet preference</label> 
                     <select className="custom-select" id="dietOption">
             
                         <option selected value='any' >Any food</option>
@@ -59,7 +59,7 @@ const MyDetails = () =>(
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-primary" id="btnCancel">Cancel</button>
-                <button type="button" className="btn btn-primary" id="btnNext">Save</button>
+                <button type="button" className="btn btn-primary" id="btnNext">Update</button>
                 
             </div>
         </div>
@@ -68,7 +68,7 @@ const MyDetails = () =>(
             
 );
 
-export default MyDetails;
+export default MyInfo;
 
 
 
