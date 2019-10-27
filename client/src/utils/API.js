@@ -6,10 +6,17 @@ export default {
     return axios.get(`/api/UserProfile/${uid}`);
   },
   createUser: function(userObj) {
+<<<<<<< HEAD
     return axios.post('/api/account/signup', userObj);
   },
   updateUser: function(uid, userObj) {
     return axios.put(`/api/UserProfile/${uid}`, userObj);
+=======
+    return axios.post('/api/UserProfile/', userObj);
+  },
+  updateUser: function(uid, userObj) {
+    return axios.post(`/api/UserProfile/${uid}`, userObj);
+>>>>>>> master
   },
   deleteUser: function(uid){
     return axios.delete(`/api/UserProfile/${uid}`);
@@ -23,6 +30,7 @@ export default {
   },
   getIngredient: function(IngredientID) {
     return axios.get(`/api/Ingredient/${IngredientID}`);
+<<<<<<< HEAD
   },
   userLogin: function(userCredentials){
     return axios.post('api/account/login', userCredentials);
@@ -34,3 +42,7 @@ export default {
     return axios.get(`/api/account/verify?token=${userToken}`)
   }
 };
+=======
+  },
+};
+>>>>>>> master
