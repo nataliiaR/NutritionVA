@@ -17,14 +17,29 @@ let sequelize = {
     },
     Create: (obj, cb) => {
         db.UserCredentials.create({
-            alias: obj.alias,
-            password: obj.password,
+            UserID: obj.UserID,
+            email: obj.email,
+            password: 'default',
             userID_FB: obj.userID_FB,
             userName_FB: obj.userName_FB,
-            UserId: obj.UserId
+            last_login: Date.now()
         })
         .then(responseBody => {
-            cb(responseBody);
+            let tempObj = { ...responseBody };
+            tempObj.password = responseBody.generateHash(obj.password);
+            sequelize.Update(tempObj, (credObj) => {
+                if (credObj !== 0)
+                {
+                    let returnObj = { ... credObj };
+                    returnObj.password = "Hidden";
+                    cb(returnObj);
+                }
+                else
+                {
+                    console.error("There was an issue updating userCredentials.");
+                    cb(credObj);
+                }
+            });
         })
         .catch((err) => {
             cb(err);
@@ -40,17 +55,17 @@ let sequelize = {
             cb(responseBody);
         })
         .catch(err => {
-            console.error(err)
-            cb(err)
+            console.error(err);
+            cb(err);
         });
     },
     Update: (obj, cb) => {
         db.UserCredentials.update({
-            alias: obj.alias,
+            email: obj.email,
             password: obj.password,
             userID_FB: obj.userID_FB,
             userName_FB: obj.userName_FB,
-            UserId: obj.UserId
+            last_login: Date.now()
         }, {
           where: {
             UserId: obj.UserId
@@ -63,6 +78,46 @@ let sequelize = {
             console.error(err);
             cb(err);
         });
+    },
+    EmailInUse: (email) => {
+        db.UserCredentials.findAll({
+            where:{
+                email: email
+            }
+        })
+        .then(responseBody => {
+            if (responseBody[0].email = email)
+            {
+                return true;
+            }
+
+            return false;
+        })
+        .catch(function(err){
+            console.error(err);
+            return false;
+        })
+    },
+    FindByEmail: (email, cb) => {
+        db.UserCredentials.findAll({
+            where:{
+                email: email
+            }
+        })
+        .then(responseBody => {
+            if (responseBody[0].email = email)
+            {
+                cb(responseBody[0]);
+            }
+            else
+            {
+                cb(0);
+            }
+        })
+        .catch(function(err){
+            console.error(err);
+            cb(0);
+        })
     }
 }
 

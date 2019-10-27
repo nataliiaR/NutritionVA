@@ -1,0 +1,56 @@
+
+.logo{
+  width: 90%;
+  height: 100%;
+}
+.aboutHeader {
+  text-align: center;
+  font-size: 45px;
+  margin-top: 40px;
+  opacity: 0.9;
+  margin-right: 300px;
+}
+
+
+.container {
+  margin-top: 10px;
+}
+
+.inputField{
+  margin: 0.5em
+}
+
+.closeBtn{
+  margin-left: 10em
+}
+.account{
+
+  background-image: url('ORFF0J0.jpg');
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar li {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar li.active {
+  background-color: #44A7BB;
+  color: white;
+}
+
+.sidebar li:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
