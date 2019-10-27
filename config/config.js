@@ -15,7 +15,7 @@ module.exports = {
     test: {
         username: process.env.TestUN,
         password: process.env.TestPW,
-        database: "nutritionVADB",
+        database: "nutritionvadb",
         host: "127.0.0.1",
         port: process.env.TestPort,
         dialect: "mysql",
