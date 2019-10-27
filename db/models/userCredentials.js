@@ -2,39 +2,30 @@
 const encryption = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
  const UserCredentials = sequelize.define('UserCredentials', {
-   alias: {
+   email: {
        type: DataTypes.STRING,
-       allowNull: true,
-       validate: {
-           notEmpty: true
-       }
+       allowNull: true
    },
    password: {
        type: DataTypes.STRING,
-       allowNull: true,
-       validate: {
-           notEmpty: true
-       }
+       allowNull: true
    },
    userID_FB: {
        type: DataTypes.INTEGER,
-       allowNull: true,
-       validate: {
-           notEmpty: true
-       }
+       allowNull: true
    },
    userName_FB: {
        type: DataTypes.STRING,
-       allowNull: true,
-       validate: {
-         notEmpty: true
-       }
-   }
+       allowNull: true
+   },
+   last_login: {
+       type: sequelize.DATE,
+       allowNull: true
+   },
  }, {
    tableName: 'UserCredentials',
    instanceMethods: {
-       generateHash(password)
-       {
+       generateHash(password){
            return encryption.hash(password, bcrypt.genSaltSync(8));
        },
        isValidPW(password) {
