@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS nutritionVADB;
-CREATE DATABASE nutritionVADB;
+DROP DATABASE IF EXISTS nutritionvadb;
+CREATE DATABASE nutritionvadb;

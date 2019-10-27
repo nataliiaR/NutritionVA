@@ -1,6 +1,6 @@
 const IUserProfile = require("../db/classes/interfaces/IUserProfile");
-const UserCredentialsSql = require("../../controller/userCredentialsSql");
-const UserSessionSql = require("../../controller/userSessionSql");
+const UserCredentialsSql = require("../db/controller/userCredentialsSql");
+const UserSessionSql = require("../db/controller/userSessionSql");
 
 module.exports = (app) => {
     app.post('/api/account/signup', (req, res) => {
