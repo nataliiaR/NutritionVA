@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0
+}
+  .headerInfo{
+    margin: 1em;
+    color: #44A7BB;
+    text-align: center;
+  }
