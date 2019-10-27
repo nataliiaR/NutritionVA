@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
        allowNull: true
    },
    last_login: {
-       type: sequelize.DATE,
+       type: DataTypes.DATE,
        allowNull: true
    },
  }, {
