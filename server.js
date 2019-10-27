@@ -16,7 +16,9 @@ app.use(logger("dev"));
 if (process.env.NODE_ENV === "production") {app.use(express.static("client/build"));}
 
 // Routes
-require("./routes/api-routes.js")(app);
+require("./routes/auth.js")(app);
+require("./routes/data.js")(app);
+require("./routes/user.js")(app);
 
 // All other routes redirected to react
 app.get("*", (req, res) => {
