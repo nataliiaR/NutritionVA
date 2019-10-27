@@ -9,7 +9,7 @@ export default {
     return axios.post('/api/account/signup', userObj);
   },
   updateUser: function(uid, userObj) {
-    return axios.post(`/api/UserProfile/${uid}`, userObj);
+    return axios.put(`/api/UserProfile/${uid}`, userObj);
   },
   deleteUser: function(uid){
     return axios.delete(`/api/UserProfile/${uid}`);
@@ -24,4 +24,13 @@ export default {
   getIngredient: function(IngredientID) {
     return axios.get(`/api/Ingredient/${IngredientID}`);
   },
+  userLogin: function(userCredentials){
+    return axios.post('api/account/login', userCredentials);
+  },
+  userLogout: function(userToken){
+    return axios.get(`/api/account/logout?token=${userToken}`)
+  },
+  verifyToken: function(userToken){
+    return axios.get(`/api/account/verify?token=${userToken}`)
+  }
 };

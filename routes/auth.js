@@ -89,7 +89,11 @@ module.exports = (app) => {
                             UserSessionSql.Update(session, (obj) => {
                                 if(obj.UserID === credObj.UserID)
                                 {
-                                    return res.JSON(obj);
+                                    return res.send({
+                                        success: true,
+                                        message: 'Valid sign in',
+                                        token: obj.UserID
+                                    });
                                 }
                                 else
                                 {
@@ -105,7 +109,11 @@ module.exports = (app) => {
                             UserSessionSql.Create(session, (obj) => {
                                 if(obj.UserID === credObj.UserID)
                                 {
-                                    return res.JSON(obj);
+                                    return res.send({
+                                        success: true,
+                                        message: 'Valid sign in',
+                                        token: obj.UserID
+                                    });
                                 }
                                 else
                                 {
@@ -134,5 +142,68 @@ module.exports = (app) => {
                 });
             }
         })
+    });
+
+    app.get('/api/account/logout?token=:token', (req, res) => {
+        const token = req.params.token;
+        UserSessionSql.Read(token, (res) => {
+            if (res.UserID === token)
+            {
+                let newSession = {
+                    UserID: token,
+                    sessionUpdate: Date.now(),
+                    isActive: false
+                }
+                UserSessionSql.Update(newSession, (obj) => {
+                    if(obj.UserID === token)
+                    {
+                        return res.send({
+                            success: true,
+                            message: 'Good'
+                          });
+                    }
+                    else
+                    {
+                        console.error("Failed to Logout");
+                        console.error(obj);
+                        return res.send({
+                            success: false,
+                            message: 'Error: Failed to Update Session'
+                        });
+                    }
+                })
+            }
+            else
+            {
+                console.error("User Session Not Found");
+                console.error(res);
+                return res.send({
+                    success: false,
+                    message: 'Error: Session Not Found'
+                });
+            }
+        });
+    })
+
+    app.get('/api/account/verify?token=:token', (req, res) => {
+        const token = req.params.token;
+        UserSessionSql.Read(token, (res) => {
+            if (res.UserID === token)
+            {
+                return res.send({
+                    success: true,
+                    message: 'Good'
+                })
+            }
+            else
+            {
+                console.log("Invalid Session Detected");
+                console.log(token);
+                return res.send({
+                    success: false,
+                    message: 'Error: Session Not Valid'
+                });
+            }
+        });
     })
 }
