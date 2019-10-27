@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true
     },
     isActive: {
-        type: DataTypes.BOOL,
+        type: DataTypes.BOOLEAN,
         allowNull: true
     }
   }, {
