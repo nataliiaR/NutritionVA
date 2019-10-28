@@ -1,8 +1,9 @@
 import React from 'react';
+import "./RecipeItem.css";
 
 const RecipeItem = (props) =>(
 
-	<div>
+	<div className = "recipeCard">
 			<div className="d-flex justify-content-between ">
 				<p>{props.name} Recipe title</p>
 			</div>
