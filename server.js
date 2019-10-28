@@ -2,6 +2,7 @@
 const express = require('express');
 const db = require("./db/models")
 const logger = require("morgan");
+const path = require('path');
 
 let app = express();
 let PORT = process.env.PORT || 3000;
@@ -13,7 +14,11 @@ app.use(express.json());
 app.use(logger("dev"));
 
 // Enables React
-if (process.env.NODE_ENV === "production") {app.use(express.static("client/build"));}
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));}
+else {app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+ });}
 
 // Routes
 require("./routes/auth.js")(app);
