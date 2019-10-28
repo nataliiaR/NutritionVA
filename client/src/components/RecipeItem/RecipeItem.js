@@ -1,5 +1,5 @@
 import React from 'react';
-import "RecipeItem.css";
+import "./RecipeItem.css";
 
 const RecipeItem = (props) =>(
 
