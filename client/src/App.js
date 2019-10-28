@@ -8,7 +8,7 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import Footer from './components/Footer/Footer.js';
 
 
-export function makeMainRoutes() {
+function MakeMainRoutes() {
   return (
     <Router>
       <div>
@@ -25,3 +25,5 @@ export function makeMainRoutes() {
     </Router>
   );
 }
+
+export default MakeMainRoutes;
